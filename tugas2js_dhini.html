@@ -1,0 +1,33 @@
+<script>
+    // Data pegawai
+var pegawai = "Ridwan";
+var jabatan = "Manager";
+var status = "Menikah";
+var gajiPokok = 0;
+
+if (jabatan === "Manager") {
+    gajiPokok = 15000000; 
+} else if (jabatan === "Asisten Manager") {
+    gajiPokok = 10000000; 
+} else if (jabatan === "Staff") {
+    gajiPokok = 5000000;
+}
+
+
+var tunjanganJabatan = 0.15 * gajiPokok;
+var bpjs = 0.10 * gajiPokok;
+var tunjanganKeluarga = (status === "Menikah") ? (0.20 * gajiPokok) : 0;
+var totalGaji = gajiPokok + tunjanganJabatan + bpjs + tunjanganKeluarga;
+
+// cetak data pegawai
+document.write("<h1> Cetak Data Pegawai </h1>");
+document.write("<hr>");
+document.write("<br> Nama Pegawai : " + pegawai +
+            "<br> Jabatan : " + jabatan +
+            "<br> Status : " + status +
+            "<br> Gaji Pokok : " + gajiPokok +
+            "<br> Tunjangan Jabatan : " + tunjanganJabatan +
+            "<br> BPJS : " + bpjs +
+            "<br> Tunjangan KeLuarga : " + tunjanganKeluarga +
+            "<br> Total Gaji : " + totalGaji);
+</script>
