@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Data Pegawai </title>
+    <style>
+        
+        table {
+            font-family: Arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        
+        tr:nth-child(odd) {
+            background-color: yellow;
+        }
+
+        tr:nth-child(even) {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Data Pegawai</h1>
+    <hr>
+    <br>
+    <table border="1">
+        <tr>
+            <th>Nama Pegawai</th>
+            <th>Jabatan</th>
+            <th>Gaji Pokok</th>
+            <th>Tunjangan Jabatan</th>
+            <th>Tunjangan Kesehatan</th>
+            <th>Gaji Kotor</th>
+            <th>Status</th>
+            <th>Zakat Profesi</th>
+            <th>Take Home Pay</th>
+        </tr>
+
+        <script>
+            for (let i = 1; i <= 10; i++) {
+                let namaPegawai = "Pegawai" + i;
+                let jabatan = "";
+                let gajiPokok = 0;
+
+                switch (true) {
+                    case i <= 2:
+                        jabatan = "Manager";
+                        gajiPokok = 15000000; break;
+                    case i <= 5:
+                        jabatan = "Asisten Manager";
+                        gajiPokok = 10000000; break;
+                    case i <= 8:
+                        jabatan = "Supervisor";
+                        gajiPokok = 7000000; break;
+                    case i <= 10:
+                        jabatan = "Staff";
+                        gajiPokok = 4000000; break;
+                    default:
+                        jabatan = " "; break;
+                }
+
+                
+                let tunjanganJabatan = 0.2 * gajiPokok;
+                let tunjanganKesehatan = 0.1 * gajiPokok;
+                let gajiKotor = gajiPokok + tunjanganJabatan + tunjanganKesehatan;
+
+                
+                let agama = (i % 2 === 1) ? "Muslim" : "Non Muslim";
+                let warnaBaris = (i % 2 === 1) ? "yellow" : "blue";
+                let zakatProfesi = (agama === "Muslim" && gajiKotor >= 7000000) ? 0.025 * gajiKotor : 0;
+                let takeHomePay = gajiKotor - zakatProfesi;
+
+                
+                document.write(`<tr style="background-color: ${warnaBaris};">`);
+                document.write("<td>" + namaPegawai + "</td>");
+                document.write("<td>" + jabatan + "</td>");
+                document.write("<td>" + gajiPokok + "</td>");
+                document.write("<td>" + tunjanganJabatan + "</td>");
+                document.write("<td>" + tunjanganKesehatan + "</td>");
+                document.write("<td>" + gajiKotor + "</td>");
+                document.write("<td>" + agama + "</td>");
+                document.write("<td>" + zakatProfesi + "</td>");
+                document.write("<td>" + takeHomePay + "</td>");
+                document.write("</tr>");
+            }
+        </script>
+    </table>
+</body>
+</html>
