@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Online Dhini</title>
+</head>
+<body>
+    <form id="frm">
+        <table style="width: 50%; background-color: rgb(255, 231, 248); border: solid; text-align: center;">
+            <thead>
+                <tr>
+                    <th colspan="2">Form Toko Online</th>
+                </tr>
+            </thead>
+            <tr>
+                <td><label for="nama">Nama</label></td>
+                <td><input type="text" name="nama" id="nama" placeholder="Masukkan Nama Anda!"></td>
+            </tr>
+            <tr>
+                <td><label for="produk">Pilih Produk</label></td>
+                <td>
+                    <select name="produk" id="produk">
+                        <option value="tv">TV</option>
+                        <option value="ac">AC</option>
+                        <option value="kulkas">KULKAS</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="jumlah">Jumlah Item</label></td>
+                <td><input type="text" name="jumlah" id="jumlah" placeholder="Masukkan Jumlah Produk"></td>
+            </tr>
+            <tr>
+                <th colspan="2"><button style="border-radius: 5px;" type="button" onclick="transaksi()">Beli</button></th>
+            </tr>
+        </table>
+    </form>
+    <script src="tugas4_dhini.js"></script>
+</body>
+</html>
