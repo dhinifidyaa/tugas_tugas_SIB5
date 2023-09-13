@@ -1,0 +1,45 @@
+           <title>Tugas 5 JS Dhini Fidya Anggraeni</title>
+        </head>
+        <body>
+            <h1>Informasi Gempa Hari Ini</h1>
+            <div id="gempa-info"></div>
+            <script>
+            class Gempa {
+                constructor(lokasi, skala) {
+                    this.lokasi = lokasi;
+                    this.skala = skala;
+                }
+            
+                dampak() {
+                    if (this.skala >= 0 && this.skala <= 2) {
+                        return "tidak terasa";
+                    } else if (this.skala > 2 && this.skala <= 4) {
+                        return "bangunan retak-retak";
+                    } else if (this.skala > 4 && this.skala <= 6) {
+                        return "bangunan roboh";
+                    } else {
+                        return "bangunan roboh dan berpotensi tsunami";
+                    }
+                }
+            }
+            
+            // Buat 5 informasi Gempa
+            let gempa1 = new Gempa("Indonesia", 1.5);
+            let gempa2 = new Gempa("Jepang", 3.0);
+            let gempa3 = new Gempa("Korea", 5.0);
+            let gempa4 = new Gempa("Hawai", 6.5);
+            let gempa5 = new Gempa("Turki", 7.5);
+
+            // Membuat daftar gempa
+            let gempaList = [gempa1, gempa2, gempa3, gempa4, gempa5];
+            // Mencetak informasi gempa ke dalam div "gempa-info"
+            gempaList.forEach(gempa => {
+            document.write(`
+                  Lokasi Gempa: ${gempa.lokasi}<br>
+                  Skala: ${gempa.skala}<br>
+                  Dampak: ${gempa.dampak()}<br><br>
+              `);
+            });
+        </script>
+        </body>
+        </html>
