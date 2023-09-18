@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css">
+    <script src="code.jquery.com_jquery-3.7.1.min.js"></script>
+    <script type="text/javascript">
+        $("document").ready(function () {
+            $("#div1").mouseup(function () {
+                var text1 = "Nama : Dhini Fidya Anggraeni <br> Umur : 20th <br> Alamat : Kuningan, Jawa Barat <br> Asal Kampus : Universitas Kuningan"
+                $(this).html(text1);
+            }).mouseleave(function(){
+                var reset1 = "Profile"
+                $(this).html(reset1);
+            });
+            $("#div2").mouseup(function () {
+                var text2 = " Cintailah dirimu sendiri sebelum mencintai orang lain. <br> Cinta diri yang sehat bukanlah bentuk kesombongan atau narsisisme, <br> tetapi lebih tentang memiliki rasa harga diri yang kuat dan menerima diri sendiri dengan semua kelebihan dan kekurangan Anda. <br> Ketika Anda mencintai diri sendiri dengan baik, Anda akan lebih mampu memberikan cinta yang tulus kepada orang lain."
+                $(this).html(text2);
+            }).mouseleave(function(){
+                var reset2 = "Moto Hidup"
+                $(this).html(reset2);
+            });
+            $("#div3").mouseup(function () {
+                var text3 = "Keahlian saya dalam bidang sistem informasia adalah menganalisis data statistika. <br> Pengalaman saya menganalisis data sebuah restoran di daerah kuningan menggunakan data statistika. <br> Saya juga dapat menguasa bahasa pemrograman seperti html, css, javascript dan lain nya juga dapat membuat website."
+                $(this).html(text3);
+            }).mouseleave(function(){
+                var reset3 = "Keahlian"
+                $(this).html(reset3);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h2>Menampilkan Data Dari Masing Masing Bidang</h2>
+    <div id="div1">Profile</div>
+    <div id="div2">Moto Hidup</div>
+    <div id="div3">Keahlian</div>
+
+</body>
+</html>

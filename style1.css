@@ -1,0 +1,21 @@
+h2{
+    text-align: center;
+    margin: 100px 50px;
+}
+body{
+    text-align: center;
+    margin: auto;
+    background-color: mistyrose;
+}
+#div1, #div2, #div3 {
+    display: inline-block;
+    margin: auto;
+    width: 30%;
+    color: rgb(0, 0, 0);
+    border: 3px solid #878787;
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    height: 200px;
+    cursor: pointer;
+}
