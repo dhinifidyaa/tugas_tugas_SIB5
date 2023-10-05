@@ -1,0 +1,38 @@
+Capture-lah perintah2 SQL dan beri komentar pada perintah queri berikut ini:
+
+- masuk ke ruang DB melalui CMD
+  ( mysql -u root -p )
+
+- tampilkan database yang sudah dibuat
+  ( SHOW DATABASE; )
+
+- buat database baru : dbpegawai
+  (create database dbpegawaisib5;)
+
+- masuk ke ruang database dbpegawai
+  (use dbpegawaisib5;)
+
+- tampilkan tabel2 yang sudah ada di dbpegawai
+  (show tables;)
+
+- buat tabel pegawai field-field:
+
+  1. id int primary key
+
+  2. nip char dengan constraint: wajib diisi, tidak boleh sama & 5 karakter
+
+  3. nama varchar dengan constraint: wajib diisi dan maksimal 30 karakter
+
+  4. gender enum('L','P') dengan constraint: wajib diisi
+
+  5. umur int dengan constraint: wajib diisi
+
+  6. berat_badan float
+  (create table pegawai (id int primary key, nip char(5) not null unique, nama varchar(30) 
+  not null, gender enum('L','P') not null, umur int not null, berat_badan float);)
+
+- tampilkan database yang sudah dibuat
+  (show databases;)
+
+- lihat deskripsi tabel pegawai yang sudah dibuat
+  (desc pegawai;)
