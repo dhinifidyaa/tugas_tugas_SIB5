@@ -1,0 +1,18 @@
+//SUB QUERY SQL 
+SELECT * FROM produk WHERE stok = (SELECT MAX(stok) FROM produk);
+SELECT * FROM produk WHERE stok = (SELECT MIN(stok) FROM produk);
+SELECT * FROM produk WHERE stok = (SELECT AVG(stok) FROM produk);
+SELECT DISTINCT harga_jual FROM produk;
+SELECT DISTINCT stok FROM produk;
+//CLAUSA CASE
+SELECT nama, harga_jual, stok,
+    -> CASE
+    -> WHEN stok >= 5 THEN 'CUKUP'
+    -> ELSE 'KURANG'
+    -> END AS Keterangan FROM produk;
+SELECT CASE
+    -> WHEN jenis_produk_id = 1 THEN 'ELEKTRONIK'
+    -> WHEN jenis_produk_id = 2 THEN 'FURNITURE'
+    -> WHEN jenis_produk_id = 3 THEN 'MAKANAN'
+    -> ELSE 'MINUMAN'
+    -> END AS kategori, SUM(stok) AS jml FROM produk GROUP BY jenis_produk_id;
